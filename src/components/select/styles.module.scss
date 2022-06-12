@@ -1,0 +1,81 @@
+@import "src/assets/styles/variables";
+
+.container {
+  background: #fff;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  flex: 1;
+  height: 100%;
+  align-items: center;
+  position: relative;
+
+  &_left {
+    padding: 5px 0 4px 10px;
+
+    .title {
+      font-size: 13px;
+      font-weight: bold;
+      color: #292929;
+      text-transform: capitalize;
+    }
+
+    .subtitle {
+      font-size: 10px;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+      color: #666;
+      text-transform: uppercase;
+      line-height: 1.6;
+
+    }
+  }
+  &_right {
+    width: 31px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+.dropdown {
+  position: absolute;
+  width: 188px;
+  z-index: 1;
+  top: 46px;
+  height: 241px;
+}
+
+.selectActive {
+
+  & .container_right {
+    background: $white-three;
+
+
+    & > * {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .container {
+
+  }
+
+}
+
+@media (max-width: $tablet) {
+
+  .container {
+    height: 63px;
+
+    &_right {
+      display: none;
+    }
+  }
+}
+

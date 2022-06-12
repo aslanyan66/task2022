@@ -1,0 +1,12 @@
+@import "src/assets/styles/variables";
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.focus {
+  background: $gray !important;
+}
+

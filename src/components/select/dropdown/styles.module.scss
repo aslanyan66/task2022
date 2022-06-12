@@ -1,0 +1,42 @@
+@import "src/assets/styles/variables";
+
+.wrap {
+  height: 100%;
+  width: 100%;
+  padding: 20px 10px 20px 20px;
+  background: $white;
+  border-radius: 3px;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+  cursor: auto;
+
+  &_title {
+    font-size: 13px;
+    font-weight: bold;
+    color: $black-one;
+    text-transform: uppercase;
+  }
+
+  .container {
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    row-gap: 20px;
+
+
+    .label {
+      font-size: 14px;
+      color: $black-one;
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      cursor: pointer;
+      line-height: 20px;
+    }
+
+    .checkbox {
+      width: 16px;
+      height: 18px;
+    }
+  }
+}

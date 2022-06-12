@@ -1,0 +1,73 @@
+@import "reset";
+@import "fonts";
+@import "variables";
+@import "mixins";
+
+body {
+  font-family: "LatoWeb", sans-serif;
+  font-style: normal;
+  background: $gray;
+}
+
+.mainContainer {
+  padding: 30px 30px 30px 70px;
+  width: calc(100% - 338px);
+  min-height: 500px;
+  background: $white-three;
+
+}
+
+.cardContainer {
+  margin-top: 20px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.infinite-scroll-component {
+  &::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: $gray;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 6px;
+    background-color: $white-three;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: $blue;
+    height: 200px;
+  }
+}
+
+
+
+
+@media (max-width: $desktop) {
+
+  .mainContainer {
+    width: 100%;
+    padding: 24px 20px;
+  }
+  .cardContainer {
+    margin-top: 15px;
+
+  }
+}
+
+@media (max-width: $tablet) {
+
+  .mainContainer {
+    width: 100%;
+    padding: 20px 15px;
+  }
+  .cardContainer {
+    margin-top: 10px;
+  }
+}
+

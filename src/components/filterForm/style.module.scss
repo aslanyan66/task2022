@@ -1,0 +1,85 @@
+@import "src/assets/styles/variables";
+@import "src/assets/styles/mixins";
+
+
+.container {
+  width: 100%;
+  background: $gray;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 19px;
+    height: 12px;
+    background: $gray;
+    transform: rotate(45deg);
+    top: -5px;
+    left: 146.5px;
+  }
+
+  .form {
+    width: 100%;
+    height: 100%;
+  }
+
+  .selectControl {
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .reset {
+    border-radius: 3px;
+    background-color: $blue;
+    color: $white;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.33;
+    letter-spacing: normal;
+    flex: 1;
+    height: 100%;
+  }
+}
+
+@media (max-width: $desktop) {
+  .container {
+
+    &:before {
+      left: calc(100% - 55px);
+    }
+
+
+  }
+
+}
+
+@media (max-width: $tablet) {
+
+  .container {
+    padding: 13px;
+    background: $white;
+    &:before {
+      content: none;
+    }
+
+    .selectControl {
+      column-gap: 0;
+      flex-direction: column;
+      height: 100%;
+      align-items: start;
+
+    }
+    .reset {
+      display: none;
+    }
+  }
+}
