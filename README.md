@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React Index](https://github.com/facebook/create-react-app).
 
+### For a first you need to copy .env.example to .env
+
 ## Available Scripts
 
 In the project directory, you can run:

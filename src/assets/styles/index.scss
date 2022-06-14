@@ -12,6 +12,7 @@ body {
 .mainContainer {
   padding: 30px 30px 30px 70px;
   width: calc(100% - 338px);
+  height: calc(100vh - 50px);
   min-height: 500px;
   background: $white-three;
 
