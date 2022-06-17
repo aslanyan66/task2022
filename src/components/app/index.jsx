@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectChoseFilter } from '../../store/common/filter/selector';
 import { getLanguage } from '../../utils/getLanguage';
 import { getOrder } from '../../utils/getOrder';
-import { useEffect, useMemo, useCallback, useRef, useState } from 'react';
+import { useEffect, useMemo, useCallback, useRef } from 'react';
 import { fetchMoreNews, fetchNews } from '../../store/common/news/thunk';
 import { getDelay } from '../../utils/getDelay';
 import { selectNews } from '../../store/common/news/selector';
@@ -20,21 +20,21 @@ const App = () => {
   const delay = useMemo(() => getDelay(autoRefresh.value), [autoRefresh.value]);
   const timerRef = useRef(null);
 
-  const fetchData = useMemo(
-    () => ({
-      limit: 20,
-      lang: getLanguage(languages.value),
-      order: getOrder(order.value),
-      nextPageToken
-    }),
-    [languages.value, order.value]
-  );
+  const fetchData = {
+    limit: 20,
+    lang: getLanguage(languages.value),
+    order: getOrder(order.value),
+    nextPageToken
+  };
 
   const getNews = useCallback(
     debounce(() => dispatch(fetchNews(fetchData)), 2000),
     []
   );
-  const fetchMoreData = useCallback(() => dispatch(fetchMoreNews(fetchData)), []);
+  const fetchMoreData = useCallback(
+    debounce(() => dispatch(fetchMoreNews(fetchData)), 1000),
+    [fetchData]
+  );
 
   useEffect(() => {
     getNews();
